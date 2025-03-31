@@ -1,0 +1,57 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'knowescape/footer.css' %}">
+
+<footer>
+    <div class="container-fluid footer-container">
+        <div class="footer-logo">
+            <img src="{% static 'knowescape/brand/updated_logo.png' %}" alt="KnowEscape Company Logo.">
+        </div>
+        <div class="footer-nav">
+            <div class="footer-column">
+                <h4>Get Around</h4>
+                <ul>
+                    <li class="nav-item">
+                        <a href="{% url 'home' %}" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#services" class="nav-link">Our Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link">Contact</a>
+                    </li>
+                    <li class="nav-item nav-action">
+                        <a href="{% url 'company-signup' %}" class="nav-link">Apply</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Our Services</h4>
+                <ul>
+                    <li class="nav-item">
+                        <a href="{% url 'start-up' %}" class="nav-link">Start-Up Support</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'skills-dev' %}" class="nav-link">Skills Development</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'es-dev' %}" class="nav-link">Enterprise & Supplier Development</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Apply Now</h4>
+                <ul>
+                    <li class="nav-item">
+                        <a href="{% url 'company-signup' %}" class="nav-link">As a business</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'learner-signup' %}" class="nav-link">As an individual</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="designer-credit">
+        Designed by <a href="https://linkedin.com/in/RhulaniMogotsi">Rhulani Mogotsi</a>
+    </div>
+</footer>
