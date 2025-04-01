@@ -260,7 +260,7 @@
                 <div class="contact-img">
                     <img src="{% static 'knowescape/images/contact-bg.webp' %}">
                 </div>
-                <form action="#" method="POST" id="contact-form">
+                <form action="{% url 'contact' %}" method="POST" id="contact-form">
                     {% csrf_token %}
                     <div class="form-block">
                         <label for="id_first_name">First name:</label>
