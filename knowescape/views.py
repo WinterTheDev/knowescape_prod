@@ -10,12 +10,13 @@ from .forms import ContactForm, LearnerForm, CompanyForm
 
 def keep_db_alive():
     with connection.cursor() as cursor:
-        try:
-            cursor.execute("SELECT 1")
-            print("The database is still active")
-        except Exception:
-            print("The database is inactive")
+        # try:
+        #     cursor.execute("SELECT 1")
+        #     print("The database is still active")
+        # except Exception:
+        #     print("The database is inactive")
 
+        cursor.execute("SELECT 1")
 
 def test_db_connection():
     users = User.objects.values("id", "username", "email")  # Retrieve all users
