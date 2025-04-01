@@ -1,9 +1,29 @@
+from django.db import connection
 from django.contrib import messages
 from django.http import HttpResponse
 from .models import Applicants, Companies
+from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
 from django.core.mail import send_mail, BadHeaderError
 from .forms import ContactForm, LearnerForm, CompanyForm
+
+
+def keep_db_alive():
+    with connection.cursor() as cursor:
+        try:
+            cursor.execute("SELECT 1")
+            print("The database is still active")
+        except Exception:
+            print("The database is inactive")
+
+
+def test_db_connection():
+    users = User.objects.values("id", "username", "email")  # Retrieve all users
+
+    # Print users to the console
+    print("Users in the database:")
+    for user in users:
+        print(f"ID: {user['id']}, Username: {user['username']}, Email: {user['email']}")
 
 
 def index(request):
@@ -12,6 +32,7 @@ def index(request):
         'page_title': 'Business & Skills Development'
     }
 
+    keep_db_alive()
     return render(request, "knowescape/home.html", context)
 
 
